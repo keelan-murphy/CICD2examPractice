@@ -2,7 +2,7 @@ from typing import Annotated
 
 from pydantic import BaseModel, EmailStr, Field, StringConstraints
 
-class userCreate(BaseModel) :
+class UserCreate(BaseModel) :
     user_id: int = Field(gt = 0) #number greater than 0
     name: Annotated[str, StringConstraints(min_length=2, max_length=50)] #2-50 characters
     email: EmailStr
